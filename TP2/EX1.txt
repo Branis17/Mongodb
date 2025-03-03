@@ -1,0 +1,133 @@
+tp2:
+db.ecommerce_produits.insertMany([
+  {
+    nom: "Audi A2",
+    description: "Citadine compacte et économique avec une conception innovante.",
+    prix: 15000,
+    stock: 10,
+    categorie: "Voiture",
+    sous_categorie: "Citadine",
+    caracteristiques_techniques: {
+      puissance: "75 ch",
+      vitesse_max: "180 km/h"
+    },
+    commentaires: [
+      { utilisateur: "Branis", note: 10, commentaire: "Très pratique en ville." }
+    ],
+    tags: ["citadine", "économie", "compacte"]
+  },
+  {
+    nom: "Audi RS3",
+    description: "Compacte sportive avec un moteur 5 cylindres turbo puissant.",
+    prix: 65000,
+    stock: 6,
+    categorie: "Voiture",
+    sous_categorie: "Sportive",
+    caracteristiques_techniques: {
+      puissance: "400 ch",
+      vitesse_max: "290 km/h"
+    },
+    commentaires: [],
+    tags: ["sportive", "performance", "turbo"]
+  },
+  {
+    nom: "Audi RS4 Avant",
+    description: "Break haute performance alliant puissance et praticité.",
+    prix: 85000,
+    stock: 4,
+    categorie: "Voiture",
+    sous_categorie: "c",
+    caracteristiques_techniques: {
+      puissance: "450 ch",
+      vitesse_max: "280 km/h"
+    },
+    commentaires: [],
+    tags: ["break", "sportive", "familiale"]
+  },
+  {
+    nom: "Audi RS5 Coupé",
+    description: "Coupé sportif avec un moteur V6 biturbo performant.",
+    prix: 95000,
+    stock: 3,
+    categorie: "Voiture",
+    sous_categorie: "Sportive",
+    caracteristiques_techniques: {
+      puissance: "450 ch",
+      vitesse_max: "280 km/h"
+    },
+    commentaires: [],
+    tags: ["coupé", "sportive", "puissance"]
+  },
+  {
+    nom: "Audi RS6 Avant",
+    description: "Break ultra-puissant avec un moteur V8 biturbo.",
+    prix: 135000,
+    stock: 2,
+    categorie: "Voiture",
+    sous_categorie: "Sportive",
+    caracteristiques_techniques: {
+      puissance: "600 ch",
+      vitesse_max: "305 km/h"
+    },
+    commentaires: [],
+    tags: ["break", "sportive", "V8"]
+  },
+  {
+    nom: "Audi RS7 Sportback",
+    description: "Berline sportive élégante avec des performances extrêmes.",
+    prix: 140000,
+    stock: 2,
+    categorie: "Voiture",
+    sous_categorie: "Sportive",
+    caracteristiques_techniques: {
+      puissance: "600 ch",
+      vitesse_max: "305 km/h"
+    },
+    commentaires: [],
+    tags: ["berline", "sportive", "V8"]
+  },
+  {
+    nom: "Audi TT RS",
+    description: "Coupé sportif avec un moteur 5 cylindres légendaire.",
+    prix: 75000,
+    stock: 5,
+    categorie: "Voiture",
+    sous_categorie: "Sportive",
+    caracteristiques_techniques: {
+      puissance: "400 ch",
+      vitesse_max: "280 km/h"
+    },
+    commentaires: [],
+    tags: ["coupé", "sportive", "performance"]
+  },
+  {
+    nom: "Audi R8 V10 Performance",
+    description: "Supercar iconique avec un moteur V10 atmosphérique.",
+    prix: 200000,
+    stock: 1,
+    categorie: "Voiture",
+    sous_categorie: "Supercar",
+    caracteristiques_techniques: {
+      puissance: "620 ch",
+      vitesse_max: "330 km/h"
+    },
+    commentaires: [],
+    tags: ["supercar", "V10", "performance"]
+  },
+  {
+    nom: "Audi e-tron GT RS",
+    description: "Berline électrique haute performance avec une accélération fulgurante.",
+    prix: 130000,
+    stock: 3,
+    categorie: "Voiture",
+    sous_categorie: "Électrique",
+    caracteristiques_techniques: {
+      puissance: "646 ch",
+      autonomie: "472 km",
+      vitesse_max: "250 km/h"
+    },
+    commentaires: [],
+    tags: ["électrique", "RS", "autonomie"]
+  }
+]);
+

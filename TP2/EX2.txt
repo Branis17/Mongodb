@@ -1,0 +1,15 @@
+1)db.ecommerce_produits.find({categorie:"Voiture")
+2)db.ecommerce_produits.find({
+ prix: {
+ $gte: 50000,
+ $lte: 150000
+ }
+ })
+3)db.ecommerce_produits.find({
+stock: { $gte: 0}
+
+ })
+4)db.ecommerce_produits.find({
+"commentaires":{ $size: 1}
+ }
+ })
