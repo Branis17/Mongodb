@@ -1,0 +1,17 @@
+1)db.ecommerce_produits.updateMany(
+  { categorie: "Voiture" }, 
+  { $mul: { prix: 1.05 } }  
+)
+2)db.ecommerce_produits.updateMany(
+  { categorie: "Sportive" },  // Filtre les produits concernés (ex. catégorie "Sportive")
+  { $set: { promotion: true } }  // Ajoute le champ "promotion" avec la valeur true
+)
+3)db.ecommerce_produits.updateMany(
+  { sous_categorie: "Sportive" },
+  { $addToSet: { tags: { $each: ["nouvelle_promo", "offre_speciale"] } } }
+)
+4)db.ecommerce_produits.updateOne(
+  { nom: "Audi RS6 Avant" },  
+  { $inc: { stock: -1 } }  
+)
+
