@@ -3,8 +3,8 @@
   { $mul: { prix: 1.05 } }  
 )
 2)db.ecommerce_produits.updateMany(
-  { categorie: "Sportive" },  // Filtre les produits concernés (ex. catégorie "Sportive")
-  { $set: { promotion: true } }  // Ajoute le champ "promotion" avec la valeur true
+  { categorie: "Sportive" },  
+  { $set: { promotion: true } } 
 )
 3)db.ecommerce_produits.updateMany(
   { sous_categorie: "Sportive" },
