@@ -1,0 +1,24 @@
+1) db.ecommerce_produits.find(
+  { 
+    stock: { $gt: 0 },
+    tags: { $in: ["Sportive", "V8"] }
+  }
+)
+2)db.ecommerce_produits.find(
+  { 
+    sous_categorie: "Sportive",  
+    stock: { $lt: 5 } 
+  }
+)
+3)
+db.ecommerce_produits.find(
+  { 
+    commentaires : {$elemMatch :{note : 10}}
+  }
+)
+
+4)db.ecommerce_produits.find(
+  { categorie: "Voiture" }  
+).sort(
+  { prix: -1 }  
+).limit(5) 
