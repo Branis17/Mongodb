@@ -13,3 +13,9 @@ stock: { $gte: 0}
 "commentaires":{ $size: 1}
  }
  })
+
+Corection :
+4) db.ecommerce_produits.find({$expr:{
+    $gte :[{$size: "commentaires"},1]
+}
+ })

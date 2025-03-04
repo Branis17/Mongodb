@@ -14,4 +14,5 @@
   { nom: "Audi RS6 Avant" },  
   { $inc: { stock: -1 } }  
 )
-
+Corection : 
+4) Pour faire des updates il est mieux d'utiliser l'id de l'object 

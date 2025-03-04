@@ -1,0 +1,8 @@
+1)db.livres.find({ disponible: true })
+2)db.livres.find({ annee_publication: { $gt: 2000 } })
+3)db.livres.find({ auteur: "Akira Toriyama" })
+4)db.livres.find({ note_moyenne: { $gt: 4 } })
+5)db.utilisateurs.find({ "adresse.ville": "Lyon" })
+6)db.livres.find({ genre: "Action" })
+7)db.livres.find({ prix: { $lt: 15 }, note_moyenne: { $gt: 4 } })
+8)db.utilisateurs.find({ "livres_empruntes.titre": "Dragon Ball" })
