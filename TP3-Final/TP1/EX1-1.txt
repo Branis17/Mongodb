@@ -1,0 +1,17 @@
+ Analysez les performances des requêtes suivantes sans index en utilisantexplain("executionStats")
+
+ Une recherche par titre exact :db.livres.find({ titre: "One Piece" }).explain("executionStats")
+
+ Une recherche par auteur : db.livres.find({ auteur: "Eiichiro Oda" }).explain("executionStats")
+
+ Une recherche par plage de prix (ex: entre 10€ et 20€) et note minimale  :
+ db.livres.find({ 
+  prix: { $gte: 10, $lte: 20 }, 
+  note_moyenne: { $gte: 4 } 
+  }).explain("executionStats")
+
+ Une recherche filtrée par genre et langue avec tri par note décroissante :
+ db.livres.find({ 
+  genre: "Action", 
+  langue: "Français" 
+}).sort({ note_moyenne: -1 }).explain("executionStats")

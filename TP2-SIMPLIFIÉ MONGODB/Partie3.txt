@@ -1,0 +1,47 @@
+1)
+db.livres.updateOne(
+  { titre: "One Piece" },
+  { $set: { titre: "One Piece - Édition Collector" } }
+)
+
+2)
+db.livres.updateMany(
+  { },
+  { $set: { stock: 5 } }
+)
+
+3)
+db.livres.updateOne(
+  { titre: "Dragon Ball " },
+  { $set: { disponible: false } }
+)
+
+4)
+db.utilisateurs.updateOne(
+  { email: "branis.kaci@ecole-isitech.fr" },
+  { $push: { livres_empruntes: {
+      livre_id: ObjectId("67c6bce0328f606ea2fdc0c5"), 
+      titre: "Death Note",
+      date_emprunt: new Date(),
+      date_retour_prevue: new Date("2025-05-10")
+    }
+  }}
+)
+
+ 5) 
+db.utilisateurs.updateOne(
+  { email: "ales.kaci@example.com" },
+  { $set: { "adresse.rue": "25 Rue de la Bibliothèque", "adresse.ville": "Paris", "adresse.code_postal": "10001" } }
+)
+
+6) 
+db.utilisateurs.updateOne(
+  { email: "branis.kaci@ecole-isitech.fr" },
+  { $addToSet: { tags: "sport" } } 
+)
+
+7)
+db.livres.updateOne(
+  { titre: "Attack on Titan" },
+  { $set: { note_moyenne: 4.8 } }
+)

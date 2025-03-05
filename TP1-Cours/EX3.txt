@@ -1,0 +1,18 @@
+1)db.ecommerce_produits.updateMany(
+  { categorie: "Voiture" }, 
+  { $mul: { prix: 1.05 } }  
+)
+2)db.ecommerce_produits.updateMany(
+  { categorie: "Sportive" },  
+  { $set: { promotion: true } } 
+)
+3)db.ecommerce_produits.updateMany(
+  { sous_categorie: "Sportive" },
+  { $addToSet: { tags: { $each: ["nouvelle_promo", "offre_speciale"] } } }
+)
+4)db.ecommerce_produits.updateOne(
+  { nom: "Audi RS6 Avant" },  
+  { $inc: { stock: -1 } }  
+)
+Corection : 
+4) Pour faire des updates il est mieux d'utiliser l'id de l'object et non le nom comme j'ai fait 

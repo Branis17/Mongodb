@@ -1,0 +1,14 @@
+1)
+db.livres.deleteOne(
+  { titre: "Dragon Ball" }
+)
+
+2)
+db.livres.deleteMany(
+  { auteur: "Eiichiro Oda" }
+)
+
+3)
+db.utilisateurs.deleteOne(
+  { email: "karim.benzema@example.com" }
+)
