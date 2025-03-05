@@ -1,0 +1,78 @@
+1)
+db.utilisateurs.updateMany({}, {
+  $set: {
+    "adresse.localisation": {
+      type: "Point",
+      coordinates: [4.823382,45.7280837]
+    }
+  }
+})
+2)
+db.bibliotheques.insertMany([
+  {
+    nom: "Bibliothèque Nationale",
+    adresse: {
+      rue: "Quai François Mauriac",
+      ville: "Paris",
+      code_postal: "75013"
+    },
+    localisation: {
+      type: "Point",
+      coordinates: [2.3799, 48.8333] // Longitude, Latitude
+    },
+    zone_service: {
+      type: "Polygon",
+      coordinates: [[
+        [2.3740, 48.8280],
+        [2.3850, 48.8280],
+        [2.3850, 48.8380],
+        [2.3740, 48.8380],
+        [2.3740, 48.8280] 
+      ]]
+    }
+  },
+  {
+    nom: "Bibliothèque Municipale de Lyon",
+    adresse: {
+      rue: "30 Boulevard Vivier Merle",
+      ville: "Lyon",
+      code_postal: "69003"
+    },
+    localisation: {
+      type: "Point",
+      coordinates: [4.8556, 45.7602]
+    },
+    zone_service: {
+      type: "Polygon",
+      coordinates: [[
+        [4.8500, 45.7550],
+        [4.8600, 45.7550],
+        [4.8600, 45.7650],
+        [4.8500, 45.7650],
+        [4.8500, 45.7550]
+      ]]
+    }
+  },
+  {
+    nom: "Bibliothèque de Marseille",
+    adresse: {
+      rue: "58 Rue de l'Évêché",
+      ville: "Marseille",
+      code_postal: "13002"
+    },
+    localisation: {
+      type: "Point",
+      coordinates: [5.3751, 43.2965]
+    },
+    zone_service: {
+      type: "Polygon",
+      coordinates: [[
+        [5.3700, 43.2900],
+        [5.3800, 43.2900],
+        [5.3800, 43.3000],
+        [5.3700, 43.3000],
+        [5.3700, 43.2900]
+      ]]
+    }
+  }
+])

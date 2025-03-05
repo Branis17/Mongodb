@@ -1,0 +1,31 @@
+1)
+db.livres.find({}, { _id: 0, titre: 1 }).sort({ note_moyenne: -1 })
+
+ 
+2)
+db.livres.find({}, { _id: 0, titre: 1, annee_publication: 1 }).sort( { annee_publication: 1 }).limit(3)
+ 
+ 3)
+db.livres.aggregate([
+  {
+    $group: {
+      _id: "$auteur",       
+      nombre_de_livres: { $sum: 1 }  
+    }
+  }
+])
+
+4)
+db.livres.find({}, { _id: 0, titre: 1, auteur: 1, note_moyenne: 1 })
+ 
+5)
+db.utilisateurs.find(
+  { $expr: { $gt: [{ $size: "$livres_empruntes" }, 1] } }, 
+  { _id: 0, email: 1, livres_empruntes: 1 }
+)
+
+
+6)db.livres.find({ titre: { $regex: "Naruto" } })
+
+7)db.livres.find({ prix: { $gte: 10, $lte: 20 } })
+

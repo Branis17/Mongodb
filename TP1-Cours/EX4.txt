@@ -29,4 +29,4 @@ correction :
     tags: { $all: ["sportive", "offre_speciale"] }
   }
 )
-$in etraduit parau moins 1 alors que $all c'est les deux 
+$in est traduit pars au moins 1 alors que $all c'est les deux 
