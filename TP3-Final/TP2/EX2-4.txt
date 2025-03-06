@@ -1,0 +1,51 @@
+1)db.livraisons.insertOne({
+  utilisateur_id: ObjectId("67c6c1f3328f606ea2fdc0c8"),
+  livre_id: ObjectId("67c6bce0328f606ea2fdc0c6"),
+  bibliotheque_id: ObjectId("67c997cee83649ef416d7a23"),
+  point_depart: {
+    type: "Point",
+    coordinates: [4.8566, 45.7602] 
+    },
+  point_arrivee: {
+    type: "Point",
+    coordinates: [4.8958142, 45.7529676] 
+  },
+  position_actuelle: {
+    type: "Point",
+    coordinates: [4.8400, 45.7625] 
+  },
+  itineraire: {
+    type: "LineString",
+    coordinates: [
+      [4.8566, 45.7602], 
+      [4.8450, 45.7620], 
+      [4.8958142, 45.7529676] 
+    ]
+  },
+  statut: "en cours",
+  date_livraison: new Date("2025-03-06T10:00:00Z")
+});
+2)db.livraisons.updateOne(
+  { _id: ObjectId("67c9a75c08e1e32b26b96665") },
+  { 
+    $set: { 
+      position_actuelle: { 
+        type: "Point", 
+        coordinates: [4.8450, 45.7610] 
+      } 
+    }
+  }
+);
+3)db.livraisons.createIndex({ position_actuelle: "2dsphere" })
+db.livraisons.find({
+    position_actuelle: {
+        $near: {
+            $geometry: {
+                type: "Point",
+                coordinates: [4.8400, 45.7625]
+            },
+            $maxDistance: 1000 
+        }
+    }
+})
+

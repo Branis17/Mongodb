@@ -3,7 +3,7 @@ db.utilisateurs.updateMany({}, {
   $set: {
     "adresse.localisation": {
       type: "Point",
-      coordinates: [4.823382,45.7280837]
+      coordinates: [4.85,45.75] // lyon trouver sur https://www.coordonneesgps.net/coordonnees-gps/lyon-69000-19027-ville
     }
   }
 })
@@ -18,8 +18,7 @@ db.bibliotheques.insertMany([
     },
     localisation: {
       type: "Point",
-      coordinates: [2.3799, 48.8333] // Longitude, Latitude
-    },
+      coordinates: [2.3799, 48.8333] 
     zone_service: {
       type: "Polygon",
       coordinates: [[
@@ -76,3 +75,7 @@ db.bibliotheques.insertMany([
     }
   }
 ])
+3)db.utilisateurs.createIndex({ "adresse.localisation": "2dsphere" })
+db.bibliotheques.createIndex({ "localisation": "2dsphere" })
+db.bibliotheques.createIndex({ "zone_service": "2dsphere" })
+

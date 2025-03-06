@@ -1,0 +1,25 @@
+1)db.utilisateurs.aggregate([
+  {
+    $geoNear: {
+      near: { type: "Point", coordinates: [4.85,45.75] }, 
+      distanceField: "distance_km",
+      maxDistance: 5000, 
+      spherical: true,
+      limit: 5
+    }
+  }
+])
+
+2)
+db.utilisateurs.aggregate([
+  {
+    $geoNear: {
+      near: { type: "Point", coordinates: [4.85, 45.75 ] }, 
+      distanceField: "distance_km",
+      maxDistance: 5000, // 5 km en mètres
+      spherical: true
+    }
+  },
+  { $limit: 5 } 
+])
+
